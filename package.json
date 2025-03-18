@@ -1,0 +1,34 @@
+{
+  "name": "fouri",
+  "version": "0.1.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "try": "npm run build && node ."
+  },
+  "files": [
+    "dist",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "license": "MIT",
+  "author": "",
+  "keywords": [
+    "fouri"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.13.1",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.0",
+    "@octokit/rest": "^21.1.1",
+    "commander": "^13.1.0",
+    "dotenv": "^16.4.7",
+    "filen": "^0.1.0",
+    "logil": "^0.1.0",
+    "twitter-api-v2": "^1.20.2"
+  }
+}
