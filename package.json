@@ -1,6 +1,6 @@
 {
   "name": "fouri",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Found Dizipal url with fouri",
   "main": "./dist/index.js",
   "bin": {

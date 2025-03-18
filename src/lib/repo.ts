@@ -53,10 +53,9 @@ async function updateRepository(
       sha: fileData.sha, // Dosyanın mevcut SHA bilgisini ekle
     });
 
-    logger.info(`Updated currentSiteURL in ${filePath} to ${newURL}`);
+    logger.success(`Updated currentSiteURL in ${filePath} to ${newURL}`);
   } catch (error) {
-    logger.error(`Failed to update ${filePath}: ${error}`);
-    throw new Error(`Failed to update ${filePath}`);
+    logger.info(error);
   }
 }
 
