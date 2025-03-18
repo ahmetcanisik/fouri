@@ -1,9 +1,13 @@
 {
   "name": "fouri",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "Found Dizipal url with fouri",
   "main": "./dist/index.js",
+  "bin": {
+    "fouri": "./dist/index.js"
+  },
   "scripts": {
+    "prepare": "npm run build",
     "build": "tsc",
     "try": "npm run build && node ."
   },
