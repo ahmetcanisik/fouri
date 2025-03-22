@@ -1,7 +1,7 @@
 {
   "name": "fouri",
-  "version": "0.1.2",
-  "description": "Found Dizipal url with fouri",
+  "version": "0.2.0",
+  "description": "Find URL in Latest Twitter Post with AI(Gemini)",
   "main": "./dist/index.js",
   "bin": {
     "fouri": "./dist/index.js"
@@ -20,11 +20,14 @@
   "license": "MIT",
   "author": "",
   "keywords": [
-    "fouri"
+    "fouri",
+    "twitter",
+    "gemini",
+    "github"
   ],
   "devDependencies": {
-    "@types/node": "^22.13.1",
-    "typescript": "^5.7.3"
+    "@types/node": "^22.13.11",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.0",

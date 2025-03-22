@@ -6,7 +6,7 @@ import 'dotenv/config';
 
 async function main() {
   const { name, description, version } = await GetPKGInfo();
-
+  const twitterUser = "5dizipal5";
   const fouri = new Command();
 
   fouri
@@ -15,21 +15,25 @@ async function main() {
     .description(description)
     .version(version, "-v, --version", "Output the current version")
     .helpOption("-h, --help", "Display help for command")
-    .action(async () => {
+    .option("-u, --user <string>", `Get latest post for the specific twitter user. default: ${twitterUser}`)
+    .option("-g, --github <string>", "Github Token")
+    .option("-t, --twitter <string>", "Twitter Bearer Token")
+    .option("-a, --gemini <string>", "Gemini(AI) Token")
+    .action(async (_, options) => {
       if (
-        !process.env.GITHUB_TOKEN ||
-        !process.env.TWITTER_BEARER_TOKEN ||
-        !process.env.GEMINI_API_KEY
+        (!process.env.GITHUB_TOKEN && !options.github) ||
+        (!process.env.TWITTER_BEARER_TOKEN && !options.twitter) ||
+        (!process.env.GEMINI_API_KEY && !options.gemini)
       ) {
         throw new Error("please check your tokens! because not found!");
       }
 
       await Fouried({
-        twitterUsername: "5dizipal5",
+        twitterUsername: options.user ?? twitterUser,
         tokens: {
-          github: process.env.GITHUB_TOKEN,
-          twitter: process.env.TWITTER_BEARER_TOKEN,
-          gemini: process.env.GEMINI_API_KEY
+          github: options.github ? options.github : process.env.GITHUB_TOKEN,
+          twitter: options.twitter ? options.twitter : process.env.TWITTER_BEARER_TOKEN,
+          gemini: options.gemini ? options.gemini : process.env.GEMINI_API_KEY
         }
       });
     });
