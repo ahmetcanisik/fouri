@@ -18,7 +18,7 @@ async function main() {
     .option("-u, --user <string>", `Get latest post for the specific twitter user. default: ${twitterUser}`)
     .option("-g, --github <string>", "Github Token")
     .option("-t, --twitter <string>", "Twitter Bearer Token")
-    .option("-a, --gemini <string>", "Gemini(AI) Token")
+    .option("-a, --gemini, --ai <string>", "AI(Gemini) Token")
     .action(async (_, options) => {
       if (
         (!process.env.GITHUB_TOKEN && !options.github) ||
